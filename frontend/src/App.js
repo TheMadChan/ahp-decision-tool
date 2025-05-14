@@ -9,6 +9,7 @@ function App() {
   const [criteria, setCriteria] = useState(['Criteria 1', 'Criteria 2', 'Criteria 3']);
   const [matrix, setMatrix] = useState(initializeMatrix(3));
   const [weights, setWeights] = useState(null);
+  const [consistency, setConsistency] = useState(null);
   const [error, setError] = useState(null);
 
   // Initialize matrix with 1's on diagonal
@@ -45,7 +46,9 @@ function App() {
     try {
       setError(null);
       const response = await axios.post('http://localhost:8000/calculate_weights/', matrix);
+      console.log("API Response:", response.data); // Log the full API response
       setWeights(response.data.weights);
+      setConsistency(response.data.consistency);
     } catch (err) {
       console.error('Error calculating weights:', err);
       setError(err.response?.data?.error || 'Failed to calculate weights');
@@ -75,6 +78,7 @@ function App() {
         <ResultsDisplay 
           weights={weights}
           criteria={criteria}
+          consistency={consistency}
         />
       )}
     </div>

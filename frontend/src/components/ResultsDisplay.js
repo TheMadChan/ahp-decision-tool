@@ -1,9 +1,25 @@
 import React from 'react';
 
-function ResultsDisplay({ weights, criteria }) {
+function ResultsDisplay({ weights, criteria, consistency }) {
   return (
     <div style={{ margin: '20px 0', padding: '15px', border: '1px solid #ddd' }}>
       <h2>Step 3: Results</h2>
+
+      {consistency && (
+        <div style={{ 
+          padding: '10px', 
+          margin: '10px 0', 
+          backgroundColor: consistency.is_consistent ? '#d4edda' : '#f8d7da',
+          borderRadius: '4px'
+        }}>
+          <h4>Consistency Check:</h4>
+          <p>Consistency Ratio: {consistency.cr.toFixed(4)}</p>
+          {consistency.is_consistent ? 
+            <p>✓ The comparison matrix is consistent (CR &lt; 0.1)</p> : 
+            <p>⚠️ Warning: The comparison matrix is inconsistent (CR &gt; 0.1). You may want to revise your judgments.</p>
+          }
+        </div>
+      )}
       
       <table border="1" cellPadding="5" style={{ borderCollapse: 'collapse' }}>
         <thead>

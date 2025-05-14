@@ -11,6 +11,12 @@
 # production
 /build
 
+#setup flag
+/setup_complete.flag
+
+#cache
+/backend/__pycache__/
+
 # misc
 .DS_Store
 .env.local

@@ -55,13 +55,21 @@ function PairwiseComparison({ criteria, matrix, onMatrixValueChange, onCalculate
                       style={{ width: '70px' }}
                     >
                       <option value="0.111">1/9</option>
+                      <option value="0.125">1/8</option>
                       <option value="0.143">1/7</option>
+                      <option value="0.167">1/6</option>
                       <option value="0.2">1/5</option>
+                      <option value="0.25">1/4</option>
                       <option value="0.333">1/3</option>
+                      <option value="0.5">1/2</option>
                       <option value="1">1</option>
+                      <option value="2">2</option>
                       <option value="3">3</option>
+                      <option value="4">4</option>
                       <option value="5">5</option>
+                      <option value="6">6</option>
                       <option value="7">7</option>
+                      <option value="8">8</option>
                       <option value="9">9</option>
                     </select>
                   ) : (
