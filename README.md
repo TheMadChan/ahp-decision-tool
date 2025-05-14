@@ -18,7 +18,7 @@ cd backend
 
 2. Install dependencies:
 ```bash
-pip install fastapi uvicorn 
+pip install -r requirements.txt
 ```
 
 3. Start the server:
